@@ -1,15 +1,13 @@
 "use client";
 
+import { toast } from "sonner";
 import React, { useState } from "react";
 
 export const PasswordPrompt = () => {
   const [password, setPassword] = useState("");
-  const [incorrect, setIncorrect] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     const req = await fetch("/api", {
       method: "POST",
       headers: {
@@ -19,8 +17,7 @@ export const PasswordPrompt = () => {
     });
 
     if (req.status !== 200) {
-      setIncorrect(true);
-      setLoading(false);
+      toast.error("Incorrect password.");
     } else {
       window.location.reload();
     }
