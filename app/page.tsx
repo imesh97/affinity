@@ -11,8 +11,13 @@ export default async function Home() {
   }
 
   return (
-    <div>
-      <p>Logged in.</p>
+    <div className="min-h-screen flex items-center justify-center bg-neutral-950 text-neutral-200">
+      <p className="text-center">
+        Logged in.
+        <br />
+        <br />
+        Work in progress...
+      </p>
     </div>
   );
 }
