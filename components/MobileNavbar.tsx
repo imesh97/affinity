@@ -26,7 +26,7 @@ export default function MobileNavbar() {
       </DrawerTrigger>
       <DrawerContent className="bg-gray-950 border-gray-900">
         <DrawerHeader className="text-gray-900">
-          <DrawerTitle className="my-1">
+          <DrawerTitle className="mt-4 mb-1">
             <Logo />
           </DrawerTitle>
           <DrawerDescription className="text-center mx-auto text-gray-500 tracking-wide">
@@ -34,7 +34,7 @@ export default function MobileNavbar() {
           </DrawerDescription>
         </DrawerHeader>
 
-        <DrawerFooter>
+        <DrawerFooter className="pb-8">
           <div className="flex flex-col space-y-3 mb-3">
             {navLinks.map((link) => (
               <DrawerClose asChild key={link.href} className="text-center">
