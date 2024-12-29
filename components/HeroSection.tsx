@@ -7,6 +7,7 @@ import PreviewSection from "./PreviewSection";
 import ShinyButton from "./ui/shiny-button";
 import { TrustedSection } from "./TrustedSection";
 import { BorderBeam } from "./ui/border-beam";
+import BlurFade from "./ui/blur-fade";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -30,17 +31,25 @@ export default function HeroSection() {
             sales.
           </span>
         </h1>
-        <div className="max-w-xl mx-auto mb-8">
+        <BlurFade
+          delay={0.2}
+          direction="up"
+          inView
+          className="max-w-xl mx-auto mb-8">
           <p className="text-xl text-gray-400 tracking-wider leading-8">
             The AI-driven CRM that <b>automates lead engagement</b> and{" "}
             <b>transforms car dealerships</b> into sales machines. Let your
             sales team focus on <b>closing more deals</b>.
           </p>
-        </div>
+        </BlurFade>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-          <div className="relative size-full md:basis-3/4 rounded-3xl">
+          <BlurFade
+            delay={0.4}
+            direction="up"
+            inView
+            className="relative size-full md:basis-3/4 rounded-3xl">
             <Input
               type="email"
               placeholder="Your email address..."
@@ -50,16 +59,18 @@ export default function HeroSection() {
             />
             <BorderBeam
               size={75}
-              delay={1}
+              delay={2}
               colorFrom="#2563eb"
               colorTo="#60a5fa"
               borderWidth={1.5}
             />
-          </div>
+          </BlurFade>
 
-          <ShinyButton className="bg-gray-100 h-12 md:basis-1/4">
-            Join
-          </ShinyButton>
+          <BlurFade delay={0.6} direction="up" inView className="md:basis-1/4">
+            <ShinyButton className="bg-gray-100 h-12 md:basis-1/4">
+              Join
+            </ShinyButton>
+          </BlurFade>
         </form>
       </header>
       <PreviewSection />

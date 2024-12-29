@@ -4,7 +4,7 @@ import Safari from "./ui/safari";
 export default function PreviewSection() {
   return (
     <div className="relative w-full max-w-5xl mx-auto pb-20" id="product">
-      <BlurFade inView inViewMargin="-20px" delay={0.2} direction="up">
+      <BlurFade inView inViewMargin="-25px" delay={0.8} direction="up">
         <Safari
           url="affinity.ai"
           className="size-full"
