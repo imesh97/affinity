@@ -10,10 +10,10 @@ import {
 import { cn } from "@/lib/utils";
 import IntegrationsBeam from "@/components/IntegrationsBeam";
 import FollowupList from "@/components/FollowupList";
+import { CustomerJourney } from "@/components/CustomerJourney";
+import PredictiveAnalytics from "@/components/PredictiveAnalytics";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
-import { CustomerJourney } from "./CustomerJourney";
-import PredictiveAnalytics from "./PredictiveAnalytics";
 
 const customerRecordsSample = [
   {
