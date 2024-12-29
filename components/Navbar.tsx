@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Gem } from "lucide-react";
 import { navLinks } from "@/constants";
+import ShimmerButton from "./ui/shimmer-button";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +30,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}>
       <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2" scroll={true}>
           <Gem className="w-8 h-8 text-blue-500" />
           <span className="text-xl font-bold text-white">affinity.ai</span>
         </Link>
@@ -39,15 +39,20 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={`#${link.href}`}
-                className="text-white hover:text-blue-400 transition-colors">
+                className="text-gray-300 hover:text-blue-400 font-medium tracking-wide transition-colors">
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-        <Button className="hidden md:inline-flex font-semibold text-gray-950 bg-white border-white hover:bg-white hover:text-gray-950">
-          Join Waitlist
-        </Button>
+        <ShimmerButton
+          type="submit"
+          className="w-full md:w-auto font-bold tracking-widest text-gray-100 uppercase"
+          background="#3b82f6"
+          borderRadius="10px"
+          shimmerSize="0.1em">
+          Book a Demo
+        </ShimmerButton>
       </div>
     </nav>
   );
