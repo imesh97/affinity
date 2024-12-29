@@ -12,7 +12,7 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <main className="w-full overflow-x-hidden">
       <HeroSection />
       <div className="bg-gray-900 text-white py-20">
         <div className="container mx-auto px-4">

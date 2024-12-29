@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Gem } from "lucide-react";
 import { navLinks } from "@/constants";
 import ShimmerButton from "./ui/shimmer-button";
-import { scrollToTop } from "@/lib/utils";
+import MobileNavbar from "./MobileNavbar";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(true);
@@ -30,16 +30,9 @@ export default function Navbar() {
           ? "bg-gray-950/90 backdrop-blur-sm shadow-xl"
           : "bg-transparent"
       }`}>
-      <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center space-x-2"
-          scroll={false}
-          onClick={(e) => scrollToTop(e)}>
-          <Gem className="w-8 h-8 text-blue-500" />
-          <span className="text-xl font-bold text-gray-100">affinity.ai</span>
-        </Link>
-        <ul className="hidden md:flex space-x-8">
+      <div className="container-fluid lg:container mx-auto px-8 py-6 flex items-center justify-between">
+        <Logo />
+        <ul className="hidden lg:flex space-x-8">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -53,12 +46,13 @@ export default function Navbar() {
         </ul>
         <ShimmerButton
           type="submit"
-          className="w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
+          className="hidden lg:flex w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
           background="#3b82f6"
           borderRadius="10px"
           shimmerSize="0.1em">
           Book a Demo
         </ShimmerButton>
+        <MobileNavbar />
       </div>
     </nav>
   );

@@ -20,29 +20,35 @@ export default function HeroSection() {
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
-      <header className="container mx-auto px-4 pt-40 pb-16 text-center">
-        <h1 className="text-7xl md:text-[84px] font-bold bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text mb-6 uppercase tracking-wide leading-[1.1]">
-          Automation that
-          <br />{" "}
-          <span className="bg-gradient-to-b from-blue-500 to-blue-600 text-transparent bg-clip-text">
-            drives
-          </span>{" "}
-          sales.
-        </h1>
+      <header className="container mx-auto px-4 pt-32 lg:pt-40 pb-16 text-center">
+        <BlurFade offset={20} delay={0} direction="down" inView className="">
+          <h1 className="text-4xl min-[505px]:text-5xl md:text-7xl lg:text-[84px] font-bold mb-6 uppercase tracking-wide leading-loose">
+            <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
+              Automation that
+              <br />{" "}
+              <span className="inline bg-gradient-to-b from-blue-400 to-blue-600 text-transparent bg-clip-text">
+                drives
+              </span>{" "}
+              sales.
+            </span>
+          </h1>
+        </BlurFade>
+
         <BlurFade
           delay={0.2}
           direction="up"
           inView
           className="max-w-xl mx-auto mb-8">
-          <p className="text-xl text-gray-400 tracking-wider leading-8">
+          <p className="text-base md:text-lg lg:text-xl text-gray-400 tracking-wider leading-7 lg:leading-8">
             The AI-driven CRM that <b>automates lead engagement</b> and{" "}
-            <b>transforms car dealerships</b> into sales machines. Let your
-            sales team focus on <b>closing more deals</b>.
+            <b>transforms car dealerships</b> into sales machines.{" "}
+            <br className="hidden md:flex lg:hidden" />
+            Let your sales team focus on <b>closing more deals</b>.
           </p>
         </BlurFade>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+          className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto px-4 md:px-0">
           <BlurFade
             delay={0.4}
             direction="up"
@@ -53,7 +59,7 @@ export default function HeroSection() {
               placeholder="Your email address..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base text-gray-200 bg-gray-800 border-gray-700 rounded-3xl w-full h-12 pl-5"
+              className="text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-sm placeholder:md:text-base text-sm md:text-base text-gray-200 bg-gray-800 border-gray-700 rounded-3xl w-full h-10 md:h-12 pl-5"
             />
             <BorderBeam
               size={75}
@@ -64,9 +70,14 @@ export default function HeroSection() {
             />
           </BlurFade>
 
-          <BlurFade delay={0.6} direction="up" inView className="md:basis-1/4">
-            <ShinyButton className="bg-gray-200 h-12 md:basis-1/4">
-              Join
+          <BlurFade
+            delay={0.6}
+            direction="up"
+            inView
+            className="md:basis-1/4 w-full">
+            <ShinyButton className="bg-gray-200 h-10 md:h-12 w-full">
+              <span className="hidden md:inline">Join</span>
+              <span className="inline md:hidden">Book a Demo</span>
             </ShinyButton>
           </BlurFade>
         </form>
