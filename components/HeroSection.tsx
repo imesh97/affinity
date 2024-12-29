@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import PreviewSection from "./PreviewSection";
 import ShinyButton from "./ui/shiny-button";
 import { TrustedSection } from "./TrustedSection";
+import { BorderBeam } from "./ui/border-beam";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -39,13 +40,23 @@ export default function HeroSection() {
         <form
           onSubmit={handleSubmit}
           className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-          <Input
-            type="email"
-            placeholder="Your email address..."
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5 md:basis-3/4"
-          />
+          <div className="relative size-full md:basis-3/4 rounded-3xl">
+            <Input
+              type="email"
+              placeholder="Your email address..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5"
+            />
+            <BorderBeam
+              size={75}
+              delay={1}
+              colorFrom="#2563eb"
+              colorTo="#60a5fa"
+              borderWidth={1.5}
+            />
+          </div>
+
           <ShinyButton className="bg-gray-100 h-12 md:basis-1/4">
             Join
           </ShinyButton>
