@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
-      <header className="container mx-auto px-4 pt-40 pb-20 text-center">
+      <header className="container mx-auto px-4 pt-40 pb-16 text-center">
         <h1 className="text-7xl md:text-8xl font-bold mb-6">
           <span className="bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text">
             Automation that
@@ -29,7 +29,7 @@ export default function HeroSection() {
             sales.
           </span>
         </h1>
-        <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto tracking-wider">
+        <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto tracking-wider leading-8">
           The AI-driven CRM that <b>automates lead engagement</b> and{" "}
           <b>transforms car dealerships</b> into sales machines. Let your sales
           team focus on what matters most &mdash; <b>closing deals</b> and{" "}

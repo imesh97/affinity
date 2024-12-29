@@ -58,6 +58,10 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground font-jakarta;
