@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const animationProps = {
-  initial: { "--x": "100%", scale: 0.8 },
+  initial: { "--x": "100%", scale: 1 },
   animate: { "--x": "-100%", scale: 1 },
   whileTap: { scale: 0.95 },
   transition: {
@@ -47,7 +47,7 @@ const ShinyButton = React.forwardRef<HTMLButtonElement, ShinyButtonProps>(
           className
         )}>
         <span
-          className="relative block size-full text-xl uppercase place-content-center tracking-wide text-gray-950 dark:font-light dark:text-[rgb(255,255,255,90%)]"
+          className="relative block size-full text-xl uppercase place-content-center tracking-wide text-gray-900 dark:font-light dark:text-[rgb(255,255,255,90%)]"
           style={{
             maskImage:
               "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",
