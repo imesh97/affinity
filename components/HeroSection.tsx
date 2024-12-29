@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import PreviewSection from "./PreviewSection";
 import ShinyButton from "./ui/shiny-button";
+import { TrustedSection } from "./TrustedSection";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -41,14 +42,13 @@ export default function HeroSection() {
             placeholder="Your email address..."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base input:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5 md:basis-3/4"
+            className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5 md:basis-3/4"
           />
-          <ShinyButton className="bg-white text-gray-100 h-12 md:basis-1/4">
-            Join
-          </ShinyButton>
+          <ShinyButton className="bg-white h-12 md:basis-1/4">Join</ShinyButton>
         </form>
       </header>
       <PreviewSection />
+      <TrustedSection />
     </div>
   );
 }
