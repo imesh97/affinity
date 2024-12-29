@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Gem } from "lucide-react";
 import { navLinks } from "@/constants";
 import ShimmerButton from "./ui/shimmer-button";
+import { scrollToTop } from "@/lib/utils";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(true);
@@ -30,7 +31,11 @@ export default function Navbar() {
           : "bg-transparent"
       }`}>
       <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2" scroll={true}>
+        <Link
+          href="/"
+          className="flex items-center space-x-2"
+          scroll={false}
+          onClick={(e) => scrollToTop(e)}>
           <Gem className="w-8 h-8 text-blue-500" />
           <span className="text-xl font-bold text-white">affinity.ai</span>
         </Link>
@@ -39,6 +44,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={`#${link.href}`}
+                scroll={true}
                 className="text-gray-300 hover:text-blue-400 font-medium tracking-wide transition-colors">
                 {link.name}
               </Link>
