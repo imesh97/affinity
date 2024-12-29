@@ -53,7 +53,7 @@ export default function Navbar() {
         </ul>
         <ShimmerButton
           type="submit"
-          className="w-full md:w-auto font-bold tracking-widest text-gray-100 uppercase"
+          className="w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
           background="#3b82f6"
           borderRadius="10px"
           shimmerSize="0.1em">
