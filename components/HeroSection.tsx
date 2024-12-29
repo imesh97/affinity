@@ -55,11 +55,11 @@ export default function HeroSection() {
               placeholder="Your email address..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5"
+              className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base text-gray-200 bg-gray-800 border-gray-700 rounded-3xl w-full h-12 pl-5"
             />
             <BorderBeam
               size={75}
-              delay={2}
+              delay={4}
               colorFrom="#2563eb"
               colorTo="#60a5fa"
               borderWidth={1.5}
