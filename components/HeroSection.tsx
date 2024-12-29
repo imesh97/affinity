@@ -21,15 +21,13 @@ export default function HeroSection() {
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
       <header className="container mx-auto px-4 pt-40 pb-16 text-center">
-        <h1 className="text-7xl md:text-8xl font-bold mb-6">
-          <span className="bg-gradient-to-b from-white to-gray-400 text-transparent bg-clip-text">
-            Automation that
-            <br />{" "}
-            <span className="bg-gradient-to-b from-blue-500 to-blue-600 text-transparent bg-clip-text">
-              drives
-            </span>{" "}
-            sales.
-          </span>
+        <h1 className="text-7xl md:text-[84px] font-bold bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text mb-6 uppercase tracking-wide leading-[1.1]">
+          Automation that
+          <br />{" "}
+          <span className="bg-gradient-to-b from-blue-500 to-blue-600 text-transparent bg-clip-text">
+            drives
+          </span>{" "}
+          sales.
         </h1>
         <BlurFade
           delay={0.2}
@@ -67,7 +65,7 @@ export default function HeroSection() {
           </BlurFade>
 
           <BlurFade delay={0.6} direction="up" inView className="md:basis-1/4">
-            <ShinyButton className="bg-gray-100 h-12 md:basis-1/4">
+            <ShinyButton className="bg-gray-200 h-12 md:basis-1/4">
               Join
             </ShinyButton>
           </BlurFade>

@@ -37,7 +37,7 @@ export default function Navbar() {
           scroll={false}
           onClick={(e) => scrollToTop(e)}>
           <Gem className="w-8 h-8 text-blue-500" />
-          <span className="text-xl font-bold text-white">affinity.ai</span>
+          <span className="text-xl font-bold text-gray-100">affinity.ai</span>
         </Link>
         <ul className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
