@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontFamily.variable} antialiased`}>
+      <body className={`${fontFamily.variable} antialiased scroll-smooth`}>
         {children}
         <Toaster position="bottom-center" visibleToasts={1} expand={false} />
       </body>
