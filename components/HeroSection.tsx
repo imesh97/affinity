@@ -20,12 +20,12 @@ export default function HeroSection() {
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
-      <header className="container mx-auto px-4 pt-32 lg:pt-40 pb-16 text-center">
+      <header className="container mx-auto px-4 pt-40 pb-20 md:pb-16 text-center">
         <BlurFade offset={20} delay={0} direction="down" inView className="">
-          <h1 className="text-4xl min-[505px]:text-5xl md:text-7xl lg:text-[84px] font-black md:font-bold mb-6 uppercase tracking-wide leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-[84px] font-black md:font-bold mb-6 uppercase tracking-wide leading-snug">
             <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
               Automation that
-              <br />{" "}
+              <br className="hidden md:inline" />{" "}
               <span className="inline bg-gradient-to-b from-blue-400 to-blue-600 text-transparent bg-clip-text">
                 drives
               </span>{" "}
@@ -36,6 +36,7 @@ export default function HeroSection() {
 
         <BlurFade
           delay={0.2}
+          offset={20}
           direction="up"
           inView
           className="max-w-xl mx-auto mb-8">

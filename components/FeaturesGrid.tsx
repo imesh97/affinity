@@ -59,14 +59,13 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: (
-      <img alt="" className="absolute -right-20 -top-20 opacity-60" />
+      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
     Icon: Zap,
     name: "Sales Pipeline Automation",
-    description:
-      "Automate follow-ups and communications while closing more deals.",
+    description: "Automate follow-ups and communications while closing deals.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 md:col-span-2",
@@ -76,8 +75,8 @@ const features = [
   },
   {
     Icon: Share2Icon,
-    name: "Integrations",
-    description: "Seamlessly connects with your existing dealership services.",
+    name: "Seamless Integrations",
+    description: "Connect with your existing dealership tools and systems.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 md:col-span-2",
