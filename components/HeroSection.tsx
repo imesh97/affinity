@@ -29,7 +29,7 @@ export default function HeroSection() {
             sales.
           </span>
         </h1>
-        <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto tracking-wider leading-8">
+        <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto tracking-wider leading-7">
           The AI-driven CRM that <b>automates lead engagement</b> and{" "}
           <b>transforms car dealerships</b> into sales machines. Let your sales
           team focus on what matters most &mdash; <b>closing deals</b> and{" "}
