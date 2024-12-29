@@ -24,7 +24,7 @@ export function TrustedSection() {
   return (
     <div className="container mx-auto px-4 pb-12">
       <h2 className="text-center text-gray-500 text-base font-semibold tracking-wider mb-4">
-        TRUSTED BY LEADING COMPANIES
+        TRUSTED BY LEADING DEALERSHIPS
       </h2>
       <div className="relative flex h-full max-w-5xl mx-auto flex-col items-center justify-center overflow-hidden">
         <Marquee pauseOnHover={false} className="[--duration:20s]">
