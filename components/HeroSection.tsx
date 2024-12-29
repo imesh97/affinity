@@ -29,11 +29,13 @@ export default function HeroSection() {
             sales.
           </span>
         </h1>
-        <p className="text-xl text-gray-400 mb-8 max-w-xl mx-auto tracking-wider leading-7">
-          The AI-driven CRM that <b>automates lead engagement</b> and{" "}
-          <b>transforms car dealerships</b> into sales machines. Let your sales
-          team focus on <b>closing more deals</b>.
-        </p>
+        <div className="max-w-xl mx-auto mb-8">
+          <p className="text-xl text-gray-400 tracking-wider leading-8">
+            The AI-driven CRM that <b>automates lead engagement</b> and{" "}
+            <b>transforms car dealerships</b> into sales machines. Let your
+            sales team focus on <b>closing more deals</b>.
+          </p>
+        </div>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
@@ -44,7 +46,9 @@ export default function HeroSection() {
             onChange={(e) => setEmail(e.target.value)}
             className="placeholder:text-gray-400 placeholder:font-light placeholder:text-base text-base md:text-base bg-gray-800 border-gray-700 text-gray-100 rounded-3xl w-full h-12 pl-5 md:basis-3/4"
           />
-          <ShinyButton className="bg-white h-12 md:basis-1/4">Join</ShinyButton>
+          <ShinyButton className="bg-gray-100 h-12 md:basis-1/4">
+            Join
+          </ShinyButton>
         </form>
       </header>
       <PreviewSection />
