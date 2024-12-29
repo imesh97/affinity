@@ -30,7 +30,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}>
       <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2" scroll={true}>
           <Gem className="w-8 h-8 text-blue-500" />
           <span className="text-xl font-bold text-white">affinity.ai</span>
         </Link>
@@ -47,9 +47,9 @@ export default function Navbar() {
         </ul>
         <ShimmerButton
           type="submit"
-          className="w-full md:w-auto font-bold tracking-wide text-white"
+          className="w-full md:w-auto font-bold tracking-widest text-gray-100 uppercase"
           background="#3b82f6"
-          borderRadius="100px"
+          borderRadius="10px"
           shimmerSize="0.1em">
           Book a Demo
         </ShimmerButton>
