@@ -43,7 +43,7 @@ let notifications = [
   },
 ];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+notifications = Array.from({ length: 4 }, () => notifications).flat();
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -52,7 +52,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         "relative mx-auto min-h-fit w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl p-4",
         // animation styles
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        "bg-transparent backdrop-blur-md border:1px_solid_rgba(255,255,255,.1) box-shadow:0_-20px_80px_-20px_#ffffff1f_inset"
+        "transform-gpu bg-transparent backdrop-blur-md border:1px_solid_rgba(255,255,255,.1) box-shadow:0_-20px_80px_-20px_#ffffff1f_inset"
       )}>
       <div className="flex flex-row items-center gap-3">
         <div
@@ -84,7 +84,7 @@ export default function FollowupList({ className }: { className?: string }) {
         "relative flex h-[500px] w-full flex-col p-6 overflow-hidden rounded-lg border bg-gray-950 md:shadow-xl",
         className
       )}>
-      <AnimatedList>
+      <AnimatedList delay={2000}>
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />
         ))}
