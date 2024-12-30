@@ -1,6 +1,7 @@
 import FeaturesSection from "@/components/FeaturesSection";
 import HeroSection from "@/components/HeroSection";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
+import SolutionsSection from "@/components/SolutionsSection";
 import { cookies } from "next/headers";
 
 export default async function Home() {
@@ -15,6 +16,7 @@ export default async function Home() {
   return (
     <main className="w-full overflow-x-hidden">
       <HeroSection />
+      <SolutionsSection />
       <FeaturesSection />
     </main>
   );
