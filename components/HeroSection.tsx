@@ -19,8 +19,8 @@ export default function HeroSection() {
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
-      <header className="container mx-auto px-4 pt-40 pb-20 md:pb-16 text-center">
-        <h1 className="z-0 text-5xl md:text-7xl lg:text-[84px] font-black md:font-bold mb-6 uppercase tracking-wide leading-snug">
+      <header className="container mx-auto px-6 pt-40 2xl:pt-52 pb-20 md:pb-16 2xl:pb-24 text-center">
+        <h1 className="text-center z-0 text-5xl md:text-7xl lg:text-[84px] 2xl:text-[108px] font-black md:font-bold mb-6 uppercase tracking-wide leading-snug">
           <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
             Automation that
             <br className="hidden md:inline" />{" "}
@@ -31,8 +31,8 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <div className="max-w-xl mx-auto mb-8">
-          <p className="text-base md:text-lg lg:text-xl text-gray-400 tracking-wider leading-7 lg:leading-8">
+        <div className="max-w-xl 2xl:max-w-2xl mx-auto mb-8 2xl:mb-10">
+          <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl text-gray-400 tracking-wider leading-7 lg:leading-8">
             The AI-driven CRM that <b>automates lead engagement</b> and{" "}
             <b>transforms car dealerships</b> into sales machines.{" "}
             <br className="hidden md:flex lg:hidden" />
