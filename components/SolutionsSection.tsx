@@ -241,7 +241,7 @@ export default function SolutionsSection() {
 
   return (
     <div
-      className="bg-gradient-to-b from-gray-950 to-gray-950/[98%] to-75% py-12 md:pt-20 lg:pt-16 lg:pb-20 2xl:pt-20"
+      className="bg-gradient-to-b from-gray-950 to-gray-950/[98%] to-75% py-12 md:pt-20 lg:pb-20 2xl:pt-20"
       id="solutions">
       <div className="container max-w-5xl 2xl:max-w-6xl mx-auto px-6 md:px-12 lg:px-8">
         {/* <h2 className="text-center text-blue-500 font-semibold mb-4">
