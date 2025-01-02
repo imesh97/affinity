@@ -22,7 +22,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950/[98%] text-gray-200 pb-6 pt-8 md:pt-10 2xl:pt-10">
+    <footer className="bg-gray-950/[98%] text-gray-200 pb-6 pt-10 md:pt-10">
       <div className="container max-w-5xl 2xl:max-w-6xl mx-auto px-6 md:px-12 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-between content-between">
           <div className="col-span-2 text-center md:text-left">
@@ -83,7 +83,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center font-light">
+        <div className="border-t border-gray-800 mt-10 md:mt-12 pt-6 flex flex-col md:flex-row justify-between items-center font-light">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Affinity Dealer Solutions. All rights
             reserved.

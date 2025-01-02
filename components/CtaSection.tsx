@@ -15,14 +15,14 @@ export default function CtaSection() {
   };
 
   return (
-    <section className="bg-gray-950 pt-12 pb-24 md:pt-16 lg:pb-32 2xl:pt-16">
+    <section className="bg-gray-950 pt-12 pb-28 md:pt-16 lg:pb-36 2xl:pt-16">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-[42px] 2xl:text-5xl font-bold text-center mb-4 2xl:mb-6 text-gray-200">
             Ready to <span className="inline text-blue-500">Transform</span>{" "}
             Your Sales?
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl 2xl:max-w-3xl mx-auto mb-10 2xl:mb-12 px-4 md:px-0 leading-7 lg:leading-8 ">
+          <p className="text-xl text-gray-400 max-w-2xl 2xl:max-w-3xl mx-auto mb-10 2xl:mb-12 px-4 md:px-0 leading-7 lg:leading-8">
             Give your sales team an <b>unfair advantage</b>. Schedule a{" "}
             <b>personalized demo</b> and see the future of automotive sales.
           </p>
