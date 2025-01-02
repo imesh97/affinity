@@ -36,12 +36,13 @@ export default function MobileNavbar() {
 
         <DrawerFooter className="pb-8">
           <div className="flex flex-col space-y-3 mb-3">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 5).map((link) => (
               <DrawerClose asChild key={link.href} className="text-center">
                 <Link
-                  href={`#${link.href}`}
+                  href={link.href}
                   scroll={true}
-                  className="text-gray-300 hover:text-blue-400 font-semibold tracking-wide transition-colors">
+                  className="text-gray-300 hover:text-blue-400 font-semibold tracking-wide transition-colors"
+                >
                   {link.name}
                 </Link>
               </DrawerClose>
@@ -53,7 +54,8 @@ export default function MobileNavbar() {
               className="flex mx-auto w-1/2 md:w-1/3 font-bold tracking-widest text-sm text-gray-100 uppercase"
               background="#3b82f6"
               borderRadius="10px"
-              shimmerSize="0.1em">
+              shimmerSize="0.1em"
+            >
               Book a Demo
             </ShimmerButton>
           </DrawerClose>

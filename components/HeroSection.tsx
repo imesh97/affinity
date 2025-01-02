@@ -14,13 +14,14 @@ export default function HeroSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Joining waitlist with email:", email);
+    setEmail("");
   };
 
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
-      <header className="container mx-auto px-6 pt-40 2xl:pt-52 pb-20 md:pb-16 2xl:pb-24 text-center">
-        <h1 className="text-center z-0 text-5xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-6 uppercase tracking-wide leading-snug">
+      <header className="container mx-auto px-6 pt-36 2xl:pt-52 pb-20 md:pb-16 2xl:pb-24 text-center">
+        <h1 className="text-center z-0 text-5xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-5 uppercase tracking-wide leading-snug">
           <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
             Automation that
             <br className="hidden md:inline" />{" "}
@@ -41,7 +42,8 @@ export default function HeroSection() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto px-4 md:px-0">
+          className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto px-4 md:px-0"
+        >
           <div className="relative size-full md:basis-3/4 rounded-3xl">
             <Input
               type="email"

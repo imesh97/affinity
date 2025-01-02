@@ -29,16 +29,18 @@ export default function Navbar() {
         isScrolled
           ? "bg-gray-950/90 backdrop-blur-sm shadow-xl"
           : "bg-transparent"
-      }`}>
+      }`}
+    >
       <div className="container-fluid lg:container mx-auto px-8 py-6 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:flex space-x-8">
-          {navLinks.map((link) => (
+          {navLinks.slice(0, 5).map((link) => (
             <li key={link.href}>
               <Link
-                href={`#${link.href}`}
+                href={link.href}
                 scroll={true}
-                className="text-gray-300 hover:text-blue-400 font-medium tracking-wide transition-colors">
+                className="text-gray-300 hover:text-blue-400 font-medium tracking-wide transition-colors"
+              >
                 {link.name}
               </Link>
             </li>
@@ -49,7 +51,8 @@ export default function Navbar() {
           className="hidden lg:flex w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
           background="#3b82f6"
           borderRadius="10px"
-          shimmerSize="0.1em">
+          shimmerSize="0.1em"
+        >
           Book a Demo
         </ShimmerButton>
         <MobileNavbar />

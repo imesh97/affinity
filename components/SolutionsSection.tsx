@@ -24,7 +24,8 @@ const solutions = [
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2">
+              strokeWidth="2"
+            >
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <path d="M3 9h18" />
             </svg>
@@ -46,7 +47,8 @@ const solutions = [
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2">
+              strokeWidth="2"
+            >
               <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
@@ -67,7 +69,8 @@ const solutions = [
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2">
+              strokeWidth="2"
+            >
               <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -159,15 +162,17 @@ const SolutionsCard = ({
     <Card
       className={`bg-transparent border-none transition-all duration-500 hover:bg-gray-900/50 group relative ${
         isActive
-          ? "transition-all bg-gray-900/50 ring-1 ring-gray-800 cursor-pointer"
+          ? "transition-all bg-gray-900/50 ring-1 ring-gray-800 cursor-pointer ease-in-out"
           : ""
       }`}
       onMouseEnter={onMouseEnter}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       <CardHeader
         className={`transition-colors ${
           isActive ? "text-gray-200" : "text-gray-300"
-        }`}>
+        }`}
+      >
         <CardTitle className="text-2xl font-semibold">
           {solution.title}
         </CardTitle>
@@ -186,7 +191,8 @@ const SolutionsCard = ({
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-4 lg:mt-8 max-w-xl mx-auto">
+            className="mt-4 lg:mt-8 max-w-xl mx-auto"
+          >
             {solution.preview}
           </motion.div>
         )}
@@ -242,7 +248,8 @@ export default function SolutionsSection() {
   return (
     <div
       className="bg-gradient-to-b from-gray-950 to-gray-950/[98%] to-75% py-12 md:pt-20 lg:pb-20 2xl:pt-20"
-      id="solutions">
+      id="solutions"
+    >
       <div className="container max-w-5xl 2xl:max-w-6xl mx-auto px-6 md:px-12 lg:px-8">
         {/* <h2 className="text-center text-blue-500 font-semibold mb-4">
           INTRODUCING AFFINITY.AI
@@ -254,14 +261,15 @@ export default function SolutionsSection() {
         </h2>
         <p className="text-lg lg:text-xl text-center text-gray-400 tracking-wide leading-7 lg:leading-8 mb-12 lg:mb-16 max-w-2xl 2xl:max-w-3xl mx-auto mt-4 md:mt-0 px-4 md:px-0">
           Take your dealership&apos;s performance to the next level with a
-          solution that turns cold leads into warm prospects, and prospects into
-          satisfied customers.
+          solution that turns <b>cold leads</b> into <b>warm prospects,</b> and{" "}
+          <b>prospects</b> into <b>satisfied customers</b>.
         </p>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div
             className="space-y-8 lg:space-y-6 mx-auto max-w-2xl lg:max-w-full lg:mx-0 text-center lg:text-left"
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}>
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {solutions.map((feature, index) => (
               <SolutionsCard
                 key={index}
@@ -287,7 +295,8 @@ export default function SolutionsSection() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className={`absolute inset-0 flex justify-center ${handleSolutionPositon(
                     activeSolution
-                  )}`}>
+                  )}`}
+                >
                   {solutions[activeSolution].preview}
                 </motion.div>
               </AnimatePresence>
