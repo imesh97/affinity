@@ -1,7 +1,10 @@
+import CtaSection from "@/components/CtaSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import { PasswordPrompt } from "@/components/PasswordPrompt";
 import SolutionsSection from "@/components/SolutionsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { cookies } from "next/headers";
 
 export default async function Home() {
@@ -18,6 +21,9 @@ export default async function Home() {
       <HeroSection />
       <SolutionsSection />
       <FeaturesSection />
+      <TestimonialsSection />
+      <CtaSection />
+      <Footer />
     </main>
   );
 }
