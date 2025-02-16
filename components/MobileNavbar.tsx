@@ -16,6 +16,13 @@ import { navLinks } from "@/constants";
 import ShimmerButton from "./ui/shimmer-button";
 
 export default function MobileNavbar() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const demoSection = document.querySelector("#demo");
+    demoSection?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <Drawer>
       <DrawerTrigger asChild className="">
@@ -49,15 +56,17 @@ export default function MobileNavbar() {
             ))}
           </div>
           <DrawerClose asChild>
-            <ShimmerButton
-              type="submit"
-              className="flex mx-auto w-1/2 md:w-1/3 font-bold tracking-widest text-sm text-gray-100 uppercase"
-              background="#3b82f6"
-              borderRadius="10px"
-              shimmerSize="0.1em"
-            >
-              Book a Demo
-            </ShimmerButton>
+            <form onSubmit={handleSubmit}>
+              <ShimmerButton
+                type="submit"
+                className="flex mx-auto w-1/2 md:w-1/3 font-bold tracking-widest text-sm text-gray-100 uppercase"
+                background="#3b82f6"
+                borderRadius="10px"
+                shimmerSize="0.1em"
+              >
+                Book a Demo
+              </ShimmerButton>
+            </form>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

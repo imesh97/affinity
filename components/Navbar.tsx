@@ -23,6 +23,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const demoSection = document.querySelector("#demo");
+    demoSection?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -46,15 +53,18 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <ShimmerButton
-          type="submit"
-          className="hidden lg:flex w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
-          background="#3b82f6"
-          borderRadius="10px"
-          shimmerSize="0.1em"
-        >
-          Book a Demo
-        </ShimmerButton>
+        <form onSubmit={handleSubmit}>
+          <ShimmerButton
+            type="submit"
+            className="hidden lg:flex w-full md:w-auto font-bold tracking-widest text-sm text-gray-100 uppercase"
+            background="#3b82f6"
+            borderRadius="10px"
+            shimmerSize="0.1em"
+          >
+            Book a Demo
+          </ShimmerButton>
+        </form>
+
         <MobileNavbar />
       </div>
     </nav>

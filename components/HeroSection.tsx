@@ -13,8 +13,9 @@ export default function HeroSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Joining waitlist with email:", email);
-    setEmail("");
+
+    const demoSection = document.querySelector("#demo");
+    demoSection?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
