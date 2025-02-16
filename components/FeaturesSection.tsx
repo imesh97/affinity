@@ -16,7 +16,7 @@ export default function FeaturesSection() {
               className="inline"
             />{" "}
             Features <br className="hidden sm:flex lg:hidden" />
-            That Drive <span className="inline text-blue-500">Results.</span>
+            That Drive <span className="inline text-blue-500">Results</span>.
           </h2>
           <p className="text-lg lg:text-xl text-gray-400 tracking-wide leading-7 lg:leading-8 max-w-2xl 2xl:max-w-3xl mx-auto mb-16 mt-4 md:mt-0 px-4 md:px-0">
             <b>Future-proof</b> your dealership with <b>intelligent features</b>{" "}

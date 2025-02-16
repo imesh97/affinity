@@ -34,7 +34,7 @@ export default function Footer() {
             >
               <Gem className="w-8 sm:w-12 h-8 sm:h-12 text-blue-500" />
               <span className={`text-3xl font-bold text-gray-100`}>
-                affinity.ai
+                Affinity
               </span>
             </Link>
             <p className="text-gray-400 mt-3 mb-6 max-w-md">

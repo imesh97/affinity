@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
         <h2 className="text-[42px] 2xl:text-5xl font-bold text-center mb-4 2xl:mb-6 text-gray-200">
           Real <span className="inline text-blue-500">Wins</span>{" "}
           <br className="flex md:hidden" />
-          From Real <span className="inline text-blue-500">Dealerships.</span>
+          From Real <span className="inline text-blue-500">Dealerships</span>.
         </h2>
 
         <p className="text-lg lg:text-xl text-center text-gray-400 tracking-wide leading-7 lg:leading-8 mb-12 lg:mb-16 max-w-2xl 2xl:max-w-3xl mx-auto mt-4 md:mt-0 px-4 md:px-0">

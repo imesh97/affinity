@@ -2,34 +2,57 @@ export const navLinks = [
   { name: "Solutions", href: "#solutions" },
   { name: "Features", href: "#features" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Pricing", href: "pricing" },
+  //  { name: "Pricing", href: "pricing" },
   { name: "FAQs", href: "faqs" },
-  { name: "Demo", href: "#demo"}
+  { name: "Demo", href: "#demo" },
 ];
 
 export const companies = [
   {
-    name: "Jack",
-    img: "https://avatar.vercel.sh/jack",
+    name: "BMW",
+    img: "/assets/bmw.png",
   },
   {
-    name: "Jill",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Buick",
+    img: "/assets/buick.png",
   },
   {
-    name: "John",
-    img: "https://avatar.vercel.sh/john",
+    name: "Ford",
+    img: "/assets/ford.png",
   },
   {
-    name: "Jane",
-    img: "https://avatar.vercel.sh/jane",
+    name: "GMC",
+    img: "/assets/gmc.png",
   },
   {
-    name: "Jenny",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Honda",
+    img: "/assets/honda.png",
   },
   {
-    name: "James",
-    img: "https://avatar.vercel.sh/james",
+    name: "Toyota",
+    img: "/assets/toyota.png",
+  },
+];
+
+export const integrations = [
+  {
+    name: "facebook",
+    img: "/assets/facebook.png",
+  },
+  {
+    name: "autotrader",
+    img: "/assets/autotrader.png",
+  },
+  {
+    name: "whatsapp",
+    img: "/assets/whatsapp.png",
+  },
+  {
+    name: "instagram",
+    img: "/assets/instagram.png",
+  },
+  {
+    name: "messenger",
+    img: "/assets/messenger.png",
   },
 ];

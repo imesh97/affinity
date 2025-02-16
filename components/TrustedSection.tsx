@@ -8,9 +8,10 @@ const TrustedCard = ({ img, name }: { img: string; name: string }) => {
       className={cn(
         "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4 items-center justify-center",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
-      )}>
+      )}
+    >
       <img
-        className="rounded-full"
+        className="filter grayscale transition-all duration-300 ease-out hover:grayscale-0"
         width="64"
         height="64"
         alt={name}

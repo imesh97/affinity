@@ -13,8 +13,10 @@ import FollowupList from "@/components/FollowupList";
 import { CustomerJourney } from "@/components/CustomerJourney";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
+import AnalyticsDemo from "./AnalyticsDemo";
+import LeadBar from "./LeadBar";
 
-const customerRecordsSample = [
+const recordsSample = [
   {
     name: "Lead: Sarah Martinez",
     body: "Interested in 2024 Tesla Model Y, viewed 5 times, scheduled test drive for next week. AI Insight: 85% likely to purchase in next 30 days",
@@ -55,32 +57,33 @@ const features = [
     name: "Lead Generation & Scoring",
     description: "Instantly prioritize and engage your most promising leads.",
     className: "col-span-3 md:col-span-1",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
     background: (
-      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
+      <LeadBar className="absolute left-20 top-10 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] bg-gray-950" />
     ),
   },
   {
     Icon: Zap,
     name: "Sales Pipeline Automation",
     description: "Automate follow-ups and communications while closing deals.",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
     className: "col-span-3 md:col-span-2",
     background: (
+      //<NotificationList className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
       <FollowupList className="absolute right-2 top-4 h-[300px] 2xl:h-[400px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
     ),
   },
   {
     Icon: Share2Icon,
-    name: "Seamless Integrations",
+    name: "Seamless Integration",
     description: "Connect with your existing dealership tools and systems.",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
     className: "col-span-3 md:col-span-2",
     background: (
-      <IntegrationsBeam className="absolute right-2 top-4 h-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
+      <IntegrationsBeam className="absolute top-4 h-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
     ),
   },
   {
@@ -88,12 +91,12 @@ const features = [
     name: "Customer Data Management",
     description:
       "All customer interactions and history in one unified platform.",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
     className: "col-span-3 md:col-span-1",
     background: (
-      <Marquee className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] ">
-        {customerRecordsSample.map((record, idx) => (
+      <Marquee className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] blur-[0.75px]">
+        {recordsSample.map((record, idx) => (
           <figure
             key={idx}
             className={cn(
@@ -104,7 +107,7 @@ const features = [
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium dark:text-white ">
+                <figcaption className="text-sm font-medium">
                   {record.name}
                 </figcaption>
               </div>
@@ -120,7 +123,7 @@ const features = [
     name: "Journey Mapping",
     description:
       "Visualize and optimize every step of the customer's buying journey.",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
     className: "col-span-3 md:col-span-1",
     background: (
@@ -132,11 +135,12 @@ const features = [
     name: "Predictive Analytics",
     description:
       "Predict buyer behavior and identify sales opportunities using AI.",
-    href: "#",
+    href: "#demo",
     cta: "Learn more",
-    className: "col-span-3 md:col-span-2",
+    className: "col-span-3 md:col-span-2 text-gray-200",
     background: (
-      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
+      <AnalyticsDemo className="absolute right-2 top-4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
+      // <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
     ),
   },
 ];
