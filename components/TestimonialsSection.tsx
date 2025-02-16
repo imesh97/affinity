@@ -1,8 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { QuoteIcon } from "lucide-react";
 import Marquee from "./ui/marquee";
-import TextReveal from "@/components/ui/text-reveal";
 
 const testimonials = [
   {
