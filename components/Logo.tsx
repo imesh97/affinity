@@ -13,7 +13,7 @@ export default function Logo({ className }: { className?: string }) {
       onClick={(e) => scrollToTop(e)}
     >
       <Gem className="w-6 sm:w-8 h-6 sm:h-8 text-blue-500" />
-      <span className={`text-xl font-bold text-gray-100`}>affinity.ai</span>
+      <span className={`text-xl font-bold text-gray-100`}>Affinity</span>
     </Link>
   );
 }
