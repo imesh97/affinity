@@ -13,37 +13,36 @@ interface Item {
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Magic UI",
-    time: "15m ago",
-
-    icon: "💸",
-    color: "#00C9A7",
-  },
-  {
-    name: "User signed up",
-    description: "Magic UI",
-    time: "10m ago",
+    name: "Facebook Lead",
+    description: "David Miller - BMW Series",
+    time: "13m ago",
     icon: "👤",
     color: "#FFB800",
   },
   {
-    name: "New message",
-    description: "Magic UI",
-    time: "5m ago",
-    icon: "💬",
+    name: "Test Drive Scheduled",
+    description: "BMW X5 - Tomorrow 2PM",
+    time: "9m ago",
+    icon: "🚗",
+    color: "#00C9A7",
+  },
+  {
+    name: "Service Follow-up",
+    description: "30-day check-in reminder",
+    time: "7m ago",
+    icon: "🔧",
     color: "#FF3D71",
   },
   {
-    name: "New event",
-    description: "Magic UI",
+    name: "AutoTrader Inquiry",
+    description: "2023 Toyota Camry",
     time: "2m ago",
-    icon: "🗞️",
+    icon: "💬",
     color: "#1E86FF",
   },
 ];
 
-notifications = Array.from({ length: 4 }, () => notifications).flat();
+notifications = Array.from({ length: 1 }, () => notifications).flat();
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -53,17 +52,19 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         // animation styles
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         "transform-gpu bg-transparent backdrop-blur-md border:1px_solid_rgba(255,255,255,.1) box-shadow:0_-20px_80px_-20px_#ffffff1f_inset"
-      )}>
+      )}
+    >
       <div className="flex flex-row items-center gap-3">
         <div
           className="flex size-10 items-center justify-center rounded-2xl"
           style={{
             backgroundColor: color,
-          }}>
+          }}
+        >
           <span className="text-lg">{icon}</span>
         </div>
         <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
+          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white">
             <span className="text-sm sm:text-lg">{name}</span>
             <span className="mx-1">·</span>
             <span className="text-xs text-gray-500">{time}</span>
@@ -83,7 +84,8 @@ export default function FollowupList({ className }: { className?: string }) {
       className={cn(
         "relative flex h-[500px] w-full flex-col p-6 overflow-hidden rounded-lg border bg-gray-950 md:shadow-xl",
         className
-      )}>
+      )}
+    >
       <AnimatedList delay={2000}>
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />
