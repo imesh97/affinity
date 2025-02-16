@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
           nationwide.
         </p>
 
-        <div className="max-w-3xl mx-auto mb-20">
+        {/* <div className="max-w-3xl mx-auto mb-20">
           <blockquote className="text-2xl md:text-3xl text-gray-200 text-center">
             <QuoteIcon className="w-12 h-12 text-blue-500 mx-auto mb-8" />
           </blockquote>
@@ -117,7 +117,7 @@ export default function TestimonialsSection() {
               <p className="text-sm text-gray-400">CEO, Automotive Inc.</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="relative flex h-full max-w-5xl 2xl:max-w-6xl mx-auto flex-col items-center justify-center overflow-hidden mt-2">
           <Marquee pauseOnHover={true} className="[--duration:20s]">
