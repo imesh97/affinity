@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
@@ -32,6 +32,28 @@ export default function MVPSection() {
   const [selectedItem, setSelectedItem] = useState(inventoryItems[0]);
   const [aiResponse, setAiResponse] = useState(aiResponses[0]);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile] = useState(false);
+
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!isHovered && !isMobile) {
+      intervalRef.current = setInterval(() => {
+        const nextId = ((selectedItem.id - 1 + 1) % inventoryItems.length) + 1;
+        const nextItem = inventoryItems.find((item) => item.id === nextId);
+
+        setSelectedItem(nextItem || inventoryItems[0]);
+        setAiResponse(aiResponses[nextId - 1]);
+      }, 3000);
+    }
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isHovered, isMobile, selectedItem.id]);
+
   const handleItemClick = (item: InventoryItem) => {
     setSelectedItem(item);
     setAiResponse(aiResponses[item.id - 1]);
@@ -52,18 +74,22 @@ export default function MVPSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="bg-gray-900/50 bg-transparent p-6 rounded-xl h-full">
+        <div className="grid md:grid-cols-2 gap-0 lg:gap-8 items-start">
+          <div className="bg-transparent p-6 rounded-xl h-full">
             <h3 className="text-xl font-semibold text-gray-200 mb-4">
               Your Inventory
             </h3>
-            <div className="space-y-2">
+            <motion.div
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="space-y-2"
+            >
               {inventoryItems.map((item) => (
                 <Button
                   key={item.id}
                   variant={selectedItem.id === item.id ? "default" : "outline"}
                   className={clsx(
-                    "w-full justify-start text-left bg-gray-200",
+                    "w-full justify-start text-left bg-gray-500 text-gray-950 border-none",
                     selectedItem.id === item.id &&
                       "bg-blue-600 hover:bg-blue-600 border-none  text-gray-300"
                   )}
@@ -73,7 +99,7 @@ export default function MVPSection() {
                   <span className="ml-auto">{item.stock} in stock</span>
                 </Button>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <div className="bg-gray-900/50 bg-transparent p-6 rounded-xl h-full">
@@ -93,7 +119,7 @@ export default function MVPSection() {
             </div>
           </div>
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-6 lg:mt-12 text-center">
           <Button
             asChild
             size={"lg"}
