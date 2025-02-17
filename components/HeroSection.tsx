@@ -22,7 +22,7 @@ export default function HeroSection() {
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
       <header className="container mx-auto px-6 pt-36 2xl:pt-52 pb-20 md:pb-16 2xl:pb-24 text-center">
-        <h1 className="text-center z-0 text-6xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-5 uppercase tracking-wide leading-snug">
+        <h1 className="text-center z-0 text-5xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-5 uppercase tracking-wide leading-snug">
           <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
             Automation that
             <br className="hidden md:inline" />{" "}
