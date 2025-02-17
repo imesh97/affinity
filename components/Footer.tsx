@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-10 md:mt-12 pt-6 flex flex-col md:flex-row justify-between items-center font-light">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Affinity Dealer Solutions. All rights
+            © {new Date().getFullYear()} Affinity Solutions. All rights
             reserved.
           </p>
           <div className="flex space-x-5 text-sm">
