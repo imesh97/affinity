@@ -7,7 +7,7 @@ export default function PreviewSection() {
       id="product"
     >
       <Safari
-        url="affinity.ai"
+        url="affinity"
         className="size-full border-none shadow-lg"
         imageSrc="/assets/cta.png"
       />
