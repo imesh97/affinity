@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 const fontFamily = Plus_Jakarta_Sans({
   variable: "--font-main",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${fontFamily.variable} antialiased scroll-smooth`}>
         {children}
         <Toaster position="bottom-center" visibleToasts={1} expand={false} />
+        <Analytics />
       </body>
     </html>
   );
