@@ -1,37 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Marquee from "./ui/marquee";
-
-const testimonials = [
-  {
-    quote:
-      "Our response time went from hours to seconds. The AI genuinely handles everything... instantly...",
-    author: "Sydney Turner",
-    role: "Sales Manager, TechCorp",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    quote:
-      "It's like having a dedicated sales assistant for every member of our team. Our conversion rates have skyrocketed.",
-    author: "Nishen Fernando",
-    role: "CEO, StartUp Innovations",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    quote:
-      "As an independent dealer, this gives us the same response capabilities as the big franchises. It's a total game-changer.",
-    author: "Amit Sharma",
-    role: "Operations Director, Global Solutions",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    quote:
-      "The 24/7 lead engagement is incredible! We're booking test drives while our competition is sleeping.",
-    author: "Virain Bawa",
-    role: "Marketing Lead, E-commerce Experts",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-];
+import { testimonials } from "@/constants";
 
 const TestimonialCard = ({
   quote,
@@ -52,7 +22,7 @@ const TestimonialCard = ({
       <div className="flex items-center mt-auto">
         <Avatar className="h-10 w-10 mr-4">
           <AvatarImage src={avatar} alt={author} />
-          <AvatarFallback>
+          <AvatarFallback className="bg-gray-300">
             {author
               .split(" ")
               .map((n) => n[0])
@@ -87,7 +57,9 @@ export default function TestimonialsSection() {
           nationwide.
         </p>
 
-        {/* <div className="max-w-3xl mx-auto mb-20">
+        {/* REMOVED MAIN BLOCKQUOTE (for now)
+
+         <div className="max-w-3xl mx-auto mb-20">
           <blockquote className="text-2xl md:text-3xl text-gray-200 text-center">
             <QuoteIcon className="w-12 h-12 text-blue-500 mx-auto mb-8" />
           </blockquote>
