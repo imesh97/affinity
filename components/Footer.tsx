@@ -37,7 +37,7 @@ export default function Footer() {
                 Affinity
               </span>
             </Link>
-            <p className="text-gray-400 mt-3 mb-6 max-w-md mx-auto">
+            <p className="text-gray-400 mt-3 mb-6 max-w-md mx-auto lg:mx-0">
               Automation that drives sales.
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
