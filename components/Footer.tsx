@@ -32,12 +32,12 @@ export default function Footer() {
               scroll={false}
               onClick={(e) => scrollToTop(e)}
             >
-              <Gem className="w-8 sm:w-12 h-8 sm:h-12 text-blue-500" />
+              <Gem className="w-8 h-8 text-blue-500" />
               <span className={`text-3xl font-bold text-gray-100`}>
                 Affinity
               </span>
             </Link>
-            <p className="text-gray-400 mt-3 mb-6 max-w-md">
+            <p className="text-gray-400 mt-3 mb-6 max-w-md mx-auto">
               Automation that drives sales.
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
