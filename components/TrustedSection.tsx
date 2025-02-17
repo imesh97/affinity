@@ -24,7 +24,7 @@ const TrustedCard = ({ img, name }: { img: string; name: string }) => {
 
 export function TrustedSection() {
   return (
-    <div className="container mx-auto px-4 pb-4 sm:pb-8">
+    <div className="container mx-auto px-4 pb-8">
       <h2 className="text-center text-gray-500 text-base font-semibold tracking-wider mb-4">
         TRUSTED BY LEADING DEALERSHIPS
       </h2>
