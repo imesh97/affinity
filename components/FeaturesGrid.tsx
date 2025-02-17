@@ -60,7 +60,7 @@ const features = [
     href: "#demo",
     cta: "Learn more",
     background: (
-      <LeadBar className="absolute left-20 top-10 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] bg-gray-950" />
+      <LeadBar className="absolute left-32 sm:left-24 top-10 h-full w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] bg-gray-950" />
     ),
   },
   {
@@ -71,8 +71,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 md:col-span-2",
     background: (
-      //<NotificationList className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
-      <FollowupList className="absolute right-2 top-4 h-[300px] 2xl:h-[400px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
+      <FollowupList className="absolute -right-8 top-4 h-[300px] 2xl:h-[400px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
     ),
   },
   {
@@ -140,7 +139,6 @@ const features = [
     className: "col-span-3 md:col-span-2 text-gray-200",
     background: (
       <AnalyticsDemo className="absolute right-2 top-4 w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
-      // <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)]" />
     ),
   },
 ];

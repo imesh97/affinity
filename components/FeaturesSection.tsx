@@ -4,7 +4,7 @@ import SparklesText from "./ui/sparkles-text";
 export default function FeaturesSection() {
   return (
     <div
-      className="bg-gray-950/[98%] text-gray-200 pt-16 pb-20 2xl:pt-20"
+      className="bg-gray-950/[98%] text-gray-200 pt-16 pb-16 2xl:pt-20"
       id="features"
     >
       <div className="container max-w-5xl 2xl:max-w-6xl mx-auto px-6 md:px-12 lg:px-8">

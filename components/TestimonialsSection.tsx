@@ -6,28 +6,28 @@ const testimonials = [
   {
     quote:
       "Our response time went from hours to seconds. The AI genuinely handles everything... instantly...",
-    author: "Sarah Johnson",
+    author: "Sydney Turner",
     role: "Sales Manager, TechCorp",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
     quote:
       "It's like having a dedicated sales assistant for every member of our team. Our conversion rates have skyrocketed.",
-    author: "Michael Chen",
+    author: "Nishen Fernando",
     role: "CEO, StartUp Innovations",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
     quote:
       "As an independent dealer, this gives us the same response capabilities as the big franchises. It's a total game-changer.",
-    author: "Emily Rodriguez",
+    author: "Amit Sharma",
     role: "Operations Director, Global Solutions",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
     quote:
       "The 24/7 lead engagement is incredible! We're booking test drives while our competition is sleeping.",
-    author: "David Patel",
+    author: "Virain Bawa",
     role: "Marketing Lead, E-commerce Experts",
     avatar: "/placeholder.svg?height=40&width=40",
   },
@@ -45,9 +45,11 @@ const TestimonialCard = ({
   avatar: string;
 }) => (
   <Card className="relative w-64 md:w-72 cursor-pointer bg-gray-900/50 border-none hover:bg-gray-800/50 transition-colors duration-300">
-    <CardContent className="flex flex-col p-6">
-      <p className="text-gray-300 transition-all mb-4 font-light">{quote}</p>
-      <div className="flex items-center">
+    <CardContent className="flex flex-col h-full p-6">
+      <div className="flex-grow">
+        <p className="text-gray-300 transition-all mb-4 font-normal">{quote}</p>
+      </div>
+      <div className="flex items-center mt-auto">
         <Avatar className="h-10 w-10 mr-4">
           <AvatarImage src={avatar} alt={author} />
           <AvatarFallback>
@@ -62,8 +64,6 @@ const TestimonialCard = ({
           <p className="text-sm text-gray-400">{role}</p>
         </div>
       </div>
-
-      {/* <QuoteIcon className="w-8 h-8 text-blue-500 mt-4" /> */}
     </CardContent>
   </Card>
 );
@@ -71,7 +71,7 @@ const TestimonialCard = ({
 export default function TestimonialsSection() {
   return (
     <div
-      className="bg-gradient-to-b from-gray-950/[98%] to-gray-950 to-[98%] py-12 md:pt-20 lg:pb-24 2xl:pt-20"
+      className="bg-gray-950 py-12 md:pt-20 lg:pb-24 2xl:pt-20"
       id="testimonials"
     >
       <div className="container max-w-5xl 2xl:max-w-6xl mx-auto px-6 md:px-12 lg:px-8">

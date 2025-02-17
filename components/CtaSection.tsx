@@ -13,7 +13,6 @@ export default function CtaSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log(`Submitted: ${name}, ${company}, ${phone}, ${email}`);
     setName("");
     setCompany("");
     setPhone("");
@@ -26,7 +25,7 @@ export default function CtaSection() {
       id="demo"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-[42px] 2xl:text-5xl font-bold text-center mb-4 2xl:mb-6 text-gray-200">
             Ready to <span className="inline text-blue-500">Transform</span>{" "}
             Your Sales Team?
@@ -68,51 +67,12 @@ export default function CtaSection() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
               />
-              {/*<BorderBeam
-                size={75}
-                delay={4}
-                colorFrom="#2563eb"
-                colorTo="#60a5fa"
-                borderWidth={1.5}
-              />
-               <BorderBeam
-              size={75}
-              delay={4}
-              colorFrom="#2563eb"
-              colorTo="#60a5fa"
-              borderWidth={1.5}
-            /> */}
             </div>
             <ShinyButton className="bg-gray-200 h-12 md:h-16 w-full rounded-[150px]">
               <span className="hidden md:inline xl:hidden">Book</span>
               <span className="inline md:hidden xl:inline">Book a Demo</span>
             </ShinyButton>
-            {/* <ShimmerButton
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-gray-200 font-semibold py-2 px-6 rounded-md transition-all duration-300"
-            >
-              Book a Demo
-            </ShimmerButton> */}
           </form>
-          {/*           <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-          >
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="bg-gray-800 border-gray-700 text-white placeholder-gray-500 flex-grow"
-            />
-            <ShimmerButton
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-gray-200 font-semibold py-2 px-6 rounded-md transition-all duration-300"
-            >
-              Book a Demo
-            </ShimmerButton>
-          </form> */}
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
 import { companies } from "@/constants";
+import Image from "next/image";
 
 const TrustedCard = ({ img, name }: { img: string; name: string }) => {
   return (
@@ -10,7 +11,7 @@ const TrustedCard = ({ img, name }: { img: string; name: string }) => {
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
       )}
     >
-      <img
+      <Image
         className="filter grayscale transition-all duration-300 ease-out hover:grayscale-0"
         width="64"
         height="64"
@@ -23,7 +24,7 @@ const TrustedCard = ({ img, name }: { img: string; name: string }) => {
 
 export function TrustedSection() {
   return (
-    <div className="container mx-auto px-4 pb-12">
+    <div className="container mx-auto px-4 pb-0">
       <h2 className="text-center text-gray-500 text-base font-semibold tracking-wider mb-4">
         TRUSTED BY LEADING DEALERSHIPS
       </h2>
