@@ -22,7 +22,7 @@ export default function HeroSection() {
     <div className="bg-gray-950 text-gray-200 min-h-screen">
       <Navbar />
       <header className="container mx-auto px-6 pt-36 2xl:pt-52 pb-20 md:pb-16 2xl:pb-24 text-center">
-        <h1 className="text-center z-0 text-5xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-5 uppercase tracking-wide leading-snug">
+        <h1 className="text-center z-0 text-6xl md:text-7xl lg:text-[84px] 2xl:text-8xl font-black md:font-bold mb-5 uppercase tracking-wide leading-snug">
           <span className="inline bg-gradient-to-b from-gray-200 to-gray-400 text-transparent bg-clip-text">
             Automation that
             <br className="hidden md:inline" />{" "}
@@ -45,13 +45,13 @@ export default function HeroSection() {
           onSubmit={handleSubmit}
           className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-lg mx-auto px-4 md:px-0"
         >
-          <div className="relative size-full md:basis-3/4 rounded-3xl">
+          <div className="relative size-full md:basis-3/4 rounded-full sm:rounded-3xl">
             <Input
               type="email"
               placeholder="Your email address..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-sm placeholder:md:text-base text-sm md:text-base text-gray-200 bg-gray-800 border-gray-700 rounded-3xl w-full h-10 md:h-12 pl-5"
+              className="text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-lg placeholder:md:text-base text-lg md:text-base text-gray-200 bg-gray-800 border-gray-700 rounded-full sm:rounded-3xl w-full h-16 md:h-12 pl-5"
             />
             <BorderBeam
               size={75}
@@ -61,7 +61,7 @@ export default function HeroSection() {
               borderWidth={1.5}
             />
           </div>
-          <ShinyButton className="bg-gray-200 h-10 md:h-12 w-full md:basis-1/4">
+          <ShinyButton className="bg-gray-200 h-16 md:h-12 w-full md:basis-1/4 rounded-full sm:rounded-3xl">
             <span className="hidden md:inline">Join</span>
             <span className="inline md:hidden">Book a Demo</span>
           </ShinyButton>
