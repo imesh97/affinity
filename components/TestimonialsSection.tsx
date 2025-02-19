@@ -17,12 +17,12 @@ const TestimonialCard = ({
   <Card className="relative w-64 md:w-72 cursor-pointer bg-gray-900/50 border-none hover:bg-gray-800/50 transition-colors duration-300">
     <CardContent className="flex flex-col h-full p-6">
       <div className="flex-grow">
-        <p className="text-gray-300 transition-all mb-4 font-normal">{quote}</p>
+        <p className="text-gray-300 transition-all mb-4 font-light">{quote}</p>
       </div>
       <div className="flex items-center mt-auto">
         <Avatar className="h-10 w-10 mr-4">
           <AvatarImage src={avatar} alt={author} />
-          <AvatarFallback className="bg-gray-300">
+          <AvatarFallback className="bg-gray-400">
             {author
               .split(" ")
               .map((n) => n[0])
