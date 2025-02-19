@@ -62,7 +62,7 @@ export const testimonials = [
     quote:
       "Our response time went from hours to seconds. The AI genuinely handles everything... instantly...",
     author: "Sydney Turner",
-    role: "Sales Manager, TechCorp",
+    role: "PhD Student",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
@@ -81,9 +81,13 @@ export const testimonials = [
   },
   {
     quote:
-      "The 24/7 lead engagement is incredible! We're booking test drives while our competition is sleeping.",
+      "The 24/7 lead engagement is amazing! It books test drives while the competition is sleeping.",
     author: "Virain Bawa",
-    role: "Marketing Lead, E-commerce Experts",
+    role: "CTO, SymptomStream",
     avatar: "/placeholder.svg?height=40&width=40",
   },
 ];
+
+export const mailTemplates = {
+  BookDemo: "d-9a96ebef879441d58525bc8c6946582c", // template id for lead capture
+};
