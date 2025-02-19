@@ -1,23 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import ShinyButton from "./ui/shiny-button";
+import { bookDemoAction } from "@/actions/mail";
+import { toast } from "sonner";
+import { BookDemoSchema } from "@/lib/schemas";
 
 export default function CtaSection() {
-  const [name, setName] = useState("");
+  /* const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); */
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [state, dispatch, isPending] = useActionState(bookDemoAction, {
+    success: "",
+    error: undefined,
+  });
 
-    setName("");
-    setCompany("");
-    setPhone("");
-    setEmail("");
+  useEffect(() => {
+    if (state.success) {
+      toast.success(state.success);
+    } else if (state.error) {
+      toast.error(state.error);
+    }
+  }, [state]);
+
+  const handleSubmit = (formData: FormData) => {
+    const data = Object.fromEntries(formData);
+    const result = BookDemoSchema.safeParse(data);
+
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+
+    dispatch(formData);
   };
+
+  /* const formRef = useRef<HTMLFormElement>(null);
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = (formData: FormData) => {
+    startTransition(async () => {
+      const { errorMessage } = await sendEmailFormAction(formData);
+      if (!errorMessage) {
+        console.log("Email sent successfully");
+        formRef.current?.reset();
+      } else {
+        console.log(errorMessage);
+      }
+    });
+  }; */
 
   return (
     <section
@@ -35,42 +69,56 @@ export default function CtaSection() {
             <b>personalized demo</b> and see the future of automotive sales.
           </p>
           <form
-            onSubmit={handleSubmit}
+            //ref={formRef}
+            action={handleSubmit}
             className="flex flex-col md:flex-col items-center justify-center gap-4 max-w-xl mx-auto px-4 md:px-0"
           >
             <div className="relative size-full rounded-[150px]">
               <Input
+                name="name"
+                disabled={isPending}
                 type="text"
                 placeholder="Your full name..."
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
               />
+
               <Input
+                name="company"
+                disabled={isPending}
                 type="text"
                 placeholder="Your company name..."
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
               />
               <Input
+                name="phone"
+                disabled={isPending}
                 type="text"
                 placeholder="Your phone number..."
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
               />
               <Input
+                name="email"
+                disabled={isPending}
                 type="email"
                 placeholder="Your email address..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
               />
             </div>
-            <ShinyButton className="bg-gray-200 h-12 md:h-16 w-full rounded-[150px]">
-              <span className="hidden md:inline xl:hidden">Book</span>
-              <span className="inline md:hidden xl:inline">Book a Demo</span>
+            <ShinyButton
+              type="submit"
+              disabled={isPending}
+              className="bg-gray-200 h-12 md:h-16 w-full rounded-[150px]"
+            >
+              {isPending ? (
+                "Sending..."
+              ) : (
+                <span>
+                  <span className="hidden md:inline xl:hidden">Book</span>
+                  <span className="inline md:hidden xl:inline">
+                    Book a Demo
+                  </span>
+                </span>
+              )}
             </ShinyButton>
           </form>
         </div>
