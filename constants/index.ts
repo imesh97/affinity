@@ -60,16 +60,16 @@ export const integrations = [
 export const testimonials = [
   {
     quote:
-      "Our response time went from hours to seconds. The AI genuinely handles everything... instantly...",
-    author: "Sydney Turner",
-    role: "PhD Student",
+      "The response time went from hours to seconds. The AI genuinely handles everything... instantly...",
+    author: "Oliver Chen",
+    role: "PhD Researcher, University of Toronto",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
     quote:
       "It's like having a dedicated sales assistant for every member of our team. Our conversion rates have skyrocketed.",
-    author: "Nishen Fernando",
-    role: "Mechanical Engineer, Western University",
+    author: "Randheep Singh",
+    role: "Sales Director, Metro Automotive Group",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
@@ -82,8 +82,8 @@ export const testimonials = [
   {
     quote:
       "The 24/7 lead engagement is amazing! It books test drives while the competition is sleeping.",
-    author: "Virain Bawa",
-    role: "CTO, SymptomStream",
+    author: "Alex Turner",
+    role: "Digital Marketing Manager, Turner Dealership Network",
     avatar: "/placeholder.svg?height=40&width=40",
   },
 ];
