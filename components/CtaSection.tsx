@@ -8,11 +8,6 @@ import { toast } from "sonner";
 import { BookDemoSchema } from "@/lib/schemas";
 
 export default function CtaSection() {
-  /* const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState(""); */
-
   const [state, dispatch, isPending] = useActionState(bookDemoAction, {
     success: "",
     error: undefined,
@@ -34,24 +29,8 @@ export default function CtaSection() {
       toast.error(result.error.errors[0].message);
       return;
     }
-
     dispatch(formData);
   };
-
-  /* const formRef = useRef<HTMLFormElement>(null);
-  const [isPending, startTransition] = useTransition();
-
-  const handleSubmit = (formData: FormData) => {
-    startTransition(async () => {
-      const { errorMessage } = await sendEmailFormAction(formData);
-      if (!errorMessage) {
-        console.log("Email sent successfully");
-        formRef.current?.reset();
-      } else {
-        console.log(errorMessage);
-      }
-    });
-  }; */
 
   return (
     <section
@@ -69,7 +48,6 @@ export default function CtaSection() {
             <b>personalized demo</b> and see the future of automotive sales.
           </p>
           <form
-            //ref={formRef}
             action={handleSubmit}
             className="flex flex-col md:flex-col items-center justify-center gap-4 max-w-xl mx-auto px-4 md:px-0"
           >
