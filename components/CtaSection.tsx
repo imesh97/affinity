@@ -9,7 +9,17 @@ import { BookDemoSchema } from "@/lib/schemas";
 import { useFormStore } from "@/store/form";
 
 export default function CtaSection() {
-  const { email: ctaEmail, setEmail } = useFormStore();
+  const {
+    name,
+    setName,
+    company,
+    setCompany,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    clear,
+  } = useFormStore();
 
   const [state, dispatch, isPending] = useActionState(bookDemoAction, {
     success: "",
@@ -33,6 +43,7 @@ export default function CtaSection() {
       return;
     }
     dispatch(formData);
+    clear();
   };
 
   return (
@@ -61,6 +72,8 @@ export default function CtaSection() {
                 type="text"
                 placeholder="Your full name..."
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
 
               <Input
@@ -69,6 +82,8 @@ export default function CtaSection() {
                 type="text"
                 placeholder="Your company name..."
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
               />
               <Input
                 name="phone"
@@ -76,6 +91,8 @@ export default function CtaSection() {
                 type="text"
                 placeholder="Your phone number..."
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
               <Input
                 name="email"
@@ -83,7 +100,7 @@ export default function CtaSection() {
                 type="email"
                 placeholder="Your email address..."
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
-                value={ctaEmail}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
