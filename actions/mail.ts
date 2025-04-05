@@ -1,17 +1,20 @@
 "use server";
 
 import { BookDemoSchema } from "@/lib/schemas";
-import { sendEmail } from "@/lib/sendgrid";
 import { revalidatePath } from "next/cache";
 
 import arcjet, { shield, detectBot, fixedWindow, request } from "@arcjet/next";
+import { Resend } from "resend";
+import LeadCaptureEmail from "@/emails/lead-capture";
 
 type BookDemoState = {
   success?: string;
   error?: string;
 };
 
+const resend = new Resend(process.env.RESEND_API_KEY!); // Resend emails
 const aj = arcjet({
+  // Arcjet security
   key: process.env.ARCJET_KEY!,
   rules: [
     shield({
@@ -56,15 +59,11 @@ export async function bookDemoAction(state: BookDemoState, formData: FormData) {
     const phone = data.phone as string;
     const email = data.email as string;
 
-    await sendEmail({
-      to: process.env.CAPTURE_EMAIL!,
-      template: "BookDemo",
-      dynamicTemplateData: {
-        name,
-        company,
-        phone,
-        email,
-      },
+    await resend.emails.send({
+      from: `Affinity <${process.env.SMTP_EMAIL!}>`,
+      to: process.env.CAPTURE_EMAIL! as string,
+      subject: "New Email Lead Capture - Affinity",
+      react: LeadCaptureEmail({ name, company, phone, email }),
     });
 
     return { success: "Sucessfully booked demo." };
@@ -78,28 +77,3 @@ export async function bookDemoAction(state: BookDemoState, formData: FormData) {
     revalidatePath("/");
   }
 }
-
-/* export const sendEmailFormAction = async (formData: FormData) => {
-  try {
-    const name = formData.get("name") as string;
-    const company = formData.get("company") as string;
-    const phone = formData.get("phone") as string;
-    const email = formData.get("email") as string;
-
-    await sendEmail({
-      to: process.env.CAPTURE_EMAIL!,
-      template: "BookDemo",
-      dynamicTemplateData: {
-        name,
-        company,
-        phone,
-        email,
-      },
-    });
-
-    return { errorMessage: null };
-  } catch (error) {
-    console.error(error);
-    return { errorMessage: "Something went wrong" };
-  }
-}; */
