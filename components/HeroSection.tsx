@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import PreviewSection from "./PreviewSection";
 import ShinyButton from "./ui/shiny-button";
 import { TrustedSection } from "./TrustedSection";
 import { BorderBeam } from "./ui/border-beam";
+import { useFormStore } from "@/store/form";
 
 export default function HeroSection() {
-  const [email, setEmail] = useState("");
+  const { email, setEmail } = useFormStore();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

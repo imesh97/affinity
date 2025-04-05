@@ -6,8 +6,11 @@ import ShinyButton from "./ui/shiny-button";
 import { bookDemoAction } from "@/actions/mail";
 import { toast } from "sonner";
 import { BookDemoSchema } from "@/lib/schemas";
+import { useFormStore } from "@/store/form";
 
 export default function CtaSection() {
+  const { email: ctaEmail, setEmail } = useFormStore();
+
   const [state, dispatch, isPending] = useActionState(bookDemoAction, {
     success: "",
     error: undefined,
@@ -80,6 +83,8 @@ export default function CtaSection() {
                 type="email"
                 placeholder="Your email address..."
                 className="mb-4 text-center md:text-left placeholder:text-gray-400 placeholder:font-light placeholder:text-base placeholder:md:text-lg text-base md:text-lg text-gray-200 bg-gray-800 border-gray-700 rounded-[150px] w-full h-12 md:h-16 pl-5"
+                value={ctaEmail}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <ShinyButton
